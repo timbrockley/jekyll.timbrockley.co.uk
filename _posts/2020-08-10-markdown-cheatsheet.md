@@ -134,4 +134,4 @@ GitHub and other sites support Emojis.
 :+1: :sparkles: :camel: :tada:
 :rocket: :metal: :octocat:
 ```
-![GitHub Emojis](/assets/images/github_emojis.png/images/github_emojis.png)
+![GitHub Emojis](/assets/images/github_emojis.png)
