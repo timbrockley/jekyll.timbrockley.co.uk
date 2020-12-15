@@ -1,0 +1,24 @@
+<!-- HEADER -->
+
+<span class="header_text">
+  <a href="/">
+      <img src="/assets/images/home_button_white_blue_circle_border.png" alt="Homepage" width="20px" height="20px">
+      {{ site.title }}
+  </a>
+</span>
+
+<span class="header_title">
+  {% if page.layout == 'home' %}
+
+    Home
+
+  {% else %}
+
+    {% if page.title %}
+      {{ page.title }}
+    {% endif %}
+
+  {% endif %}
+</span>
+
+<!-- HEADER -->

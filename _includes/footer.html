@@ -1,0 +1,67 @@
+<!-- FOOTER -->
+<div id="footer">
+
+<span class="footer_text">
+
+  <a href="/">
+      <img src="/assets/images/home_button_white_blue_circle_border.png" alt="Homepage Link" width="20px" height="20px">
+  </a>
+
+  &nbsp;
+
+  {% if site.copyright %}
+
+      {{ site.copyright }}
+
+  {% else %}
+
+      {% if site.copyright_year or site.copyright_year_start or site.copyright_end or site.copyright_owner %}
+
+          Copyright
+
+          {% if site.copyright_year %}
+
+              {{ site.copyright_year }}
+
+          {% else %}
+
+              {% if site.copyright_year_start %}
+
+                  {{ site.copyright_year_start }}
+                  -
+
+              {% endif %}
+
+              {% if site.copyright_year_end %}
+
+                  {{ site.copyright_year_end }}
+
+              {% else %}
+
+                {{ 'now' | date: "%Y" }}
+
+              {% endif %}
+
+
+          {% endif %}
+
+          {% if site.copyright_owner %}
+              {{ site.copyright_owner }}
+          {% endif %}
+
+          {% if site.copyright_terms %}
+              {{ site.copyright_terms }}
+          {% endif %}
+
+      {% else %}
+
+          {{ site.title }}
+
+      {% endif %}
+
+  {% endif %}
+
+</span>
+
+</div>
+<!-- FOOTER -->
