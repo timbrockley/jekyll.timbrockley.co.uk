@@ -5,11 +5,12 @@
 
 body
 {
-    grid-template-rows: 36px auto 36px;
+    grid-template-rows: 36px auto 56px 30px;
     grid-template-columns: auto 240px;
     grid-template-areas:
         "header title"
         "main main"
+        "taxonomies taxonomies"
         "footer footer";
     display: grid;
     background-color: white;
@@ -19,37 +20,37 @@ body
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.header_text
+.header_site_title
 {
     grid-area: header;
     display: flex;
     justify-content: left;
-    text-align: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     background-color: black;
     color: white;
     margin: 0px;
-    padding: 8px;
+    padding: 4px;
+    padding-bottom: 8px;
 }
 
-.header_text a
+.header_site_title a
 {
     color: white;
     text-decoration: none;
 }
-.header_text a:visited
+.header_site_title a:visited
 {
     color: white;
     text-decoration: none;
 }
-.header_text a:hover
+.header_site_title a:hover
 {
     color: white;
 }
 
-.header_title
+.header_page_title
 {
     grid-area: title;
     background-color: black;
@@ -57,8 +58,8 @@ body
     padding: 8px;
     display: flex;
     justify-content: center;
-    text-align: center;
     align-items: center;
+    text-align: center;
     font-weight: bold;
 }
 
@@ -77,12 +78,20 @@ body
     min-width: 360px;
 }
 
+#taxonomies
+{
+    grid-area: taxonomies;
+    background-color: #CCC;
+    margin: 0px;
+    padding: 4px;
+}
+
 #footer
 {
     grid-area: footer;
-    background-color: #CCC;
+    background-color: #BBB;
     margin: 0px;
-    padding: 8px;
+    padding: 4px;
 }
 
 .footer_text

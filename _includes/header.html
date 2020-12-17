@@ -1,13 +1,12 @@
 <!-- HEADER -->
-
-<span class="header_text">
+<span class="header_site_title">
   <a href="/">
-      <img src="/assets/images/home_button_white_blue_circle_border.png" alt="Homepage" width="20px" height="20px">
-      {{ site.title }}
+      <img src="/assets/images/home_button_white_blue_circle_border.png" alt="Homepage" width="22px" height="22px">
+      <span style="margin-left: 2px;">{{ site.title }}</span>
   </a>
 </span>
 
-<span class="header_title">
+<span class="header_page_title">
   {% if page.layout == 'home' %}
 
     Home
@@ -20,5 +19,4 @@
 
   {% endif %}
 </span>
-
 <!-- HEADER -->

@@ -3,6 +3,9 @@ layout: post
 title: "Markdown Cheatsheet"
 description: "A quick guide to markdown."
 draft: false
+permalink: /:path
+categories: cat1
+tags: tag1
 ---
 
 ## Headings

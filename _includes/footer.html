@@ -1,67 +1,87 @@
 <!-- FOOTER -->
+<div id="taxonomies">
+
+    Categories:
+    {% assign site_categories = site.categories | sort %}
+    {% for category in site_categories %}
+        &nbsp;
+        <a href="/categories#{{ category | first }}">{{ category | first }}</a>
+    {% endfor %}
+    <br>
+    Tags:
+    {% assign site_tags = site.tags | sort %}
+    {% for tag in site_tags %}
+        &nbsp;
+        <a href="/tags#{{ tag | first }}">{{ tag | first }}</a>
+    {% endfor %}
+    <br>
+
+</div>
 <div id="footer">
 
-<span class="footer_text">
+    <span class="footer_text">
 
-  <a href="/">
-      <img src="/assets/images/home_button_white_blue_circle_border.png" alt="Homepage Link" width="20px" height="20px">
-  </a>
+        <a href="/">
+            <img src="/assets/images/home_button_white_blue_circle_border.png" alt="Homepage Link" width="20px" height="20px">
+        </a>
 
-  &nbsp;
+        <span style="margin-left: 4px;">
 
-  {% if site.copyright %}
+            {% if site.copyright %}
 
-      {{ site.copyright }}
+                {{ site.copyright }}
 
-  {% else %}
+            {% else %}
 
-      {% if site.copyright_year or site.copyright_year_start or site.copyright_end or site.copyright_owner %}
+                {% if site.copyright_year or site.copyright_year_start or site.copyright_end or site.copyright_owner %}
 
-          Copyright
+                    Copyright
 
-          {% if site.copyright_year %}
+                    {% if site.copyright_year %}
 
-              {{ site.copyright_year }}
+                        {{ site.copyright_year }}
 
-          {% else %}
+                    {% else %}
 
-              {% if site.copyright_year_start %}
+                        {% if site.copyright_year_start %}
 
-                  {{ site.copyright_year_start }}
-                  -
+                            {{ site.copyright_year_start }}
+                            -
 
-              {% endif %}
+                        {% endif %}
 
-              {% if site.copyright_year_end %}
+                        {% if site.copyright_year_end %}
 
-                  {{ site.copyright_year_end }}
+                            {{ site.copyright_year_end }}
 
-              {% else %}
+                        {% else %}
 
-                {{ 'now' | date: "%Y" }}
+                            {{ 'now' | date: '%Y' }}
 
-              {% endif %}
+                        {% endif %}
 
 
-          {% endif %}
+                    {% endif %}
 
-          {% if site.copyright_owner %}
-              {{ site.copyright_owner }}
-          {% endif %}
+                    {% if site.copyright_owner %}
+                        {{ site.copyright_owner }}
+                    {% endif %}
 
-          {% if site.copyright_terms %}
-              {{ site.copyright_terms }}
-          {% endif %}
+                    {% if site.copyright_terms %}
+                        {{ site.copyright_terms }}
+                    {% endif %}
 
-      {% else %}
+                {% else %}
 
-          {{ site.title }}
+                    {{ site.title }}
 
-      {% endif %}
+                {% endif %}
 
-  {% endif %}
+            {% endif %}
 
-</span>
+        </span>
+
+    </span>
 
 </div>
 <!-- FOOTER -->

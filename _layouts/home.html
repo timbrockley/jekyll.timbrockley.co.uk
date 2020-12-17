@@ -3,28 +3,62 @@ layout: default
 ---
 <!-- HOME -->
 <div id="home">
-  {{ content }}
 
-  {%- if site.posts.size > 0 -%}
-    <h2>{{ page.list_title | default: "Posts" }}</h2>
-    <ul>
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span>{{ post.date | date: date_format }}</span>
-        <h3>
-          <a href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
+  <!-- only output if posts exist -->
+  {% if site.posts.size > 0 %}
+    <hr>
 
-  {%- endif -%}
+    <h2>Posts</h2>
+    <table><tr><th>title</th><th>url</th><th>folder</th><th>filename</th><th>date</th></tr>
+      {% for post in site.posts %}
+        <!-- assign folder and filename -->
+        {% assign path = post.path | replace:'_posts/','' %}
+        {% assign path_parts = post.path | split: '/' %}
+        {% if path contains '/' %}
+          {% assign folder = path_parts[1] %}
+        {% else %}
+          {% assign folder = '' %}
+        {% endif %}
+        {% assign filename = path_parts.last %}
+        <!-- assign folder and filename -->
+        <tr>
+          <td><a href="{{ post.url }}">{{ post.title }}</a></td>
+          <td>{{ post.url }}</td>
+          <td>{{ folder }}</td>
+          <td>{{ filename }}</td>
+          <td>{{ post.date | date: '%d %b %Y' }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+
+    <hr>
+
+    <h2>Categories / Tags</h2>
+    <table><tr><th>categories</th><th>tags</th><th>title</th><th>date</th></tr>
+      {% for post in site.posts %}
+        <!-- assign folder and filename -->
+        {% assign path = post.path | replace:'_posts/','' %}
+        {% assign path_parts = post.path | split: '/' %}
+        {% if path contains '/' %}
+          {% assign folder = path_parts[1] %}
+        {% else %}
+          {% assign folder = '' %}
+        {% endif %}
+        {% assign filename = path_parts.last %}
+        <!-- assign folder and filename -->
+        <tr>
+          <td>{{ post.categories | join }}</td>
+          <td>{{ post.tags | join }}</td>
+          <td><a href="{{ post.url }}">{{ post.title }}</a></td>
+          <td>{{ post.date | date: '%d %b %Y' }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+
+    <hr>
+
+  {% endif %}
+  <!-- only output if posts exist -->
 
 </div>
 <!-- HOME -->

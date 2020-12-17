@@ -3,6 +3,9 @@ layout: post
 title: "Delete GitHub History"
 description: "How to clone a GitHub repository and replace all existing commit history with an initial commit."
 draft: false
+permalink: /:path
+categories: cat2
+tags: tag2
 ---
 ## Delete GitHub History
 
