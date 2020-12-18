@@ -9,52 +9,69 @@
 
         <span style="margin-left: 4px;">
 
+            <!-- use copyright value if set -->
             {% if site.copyright %}
 
                 {{ site.copyright }}
 
             {% else %}
 
+                <!-- use copyright values if set otherwise use site title -->
                 {% if site.copyright_year or site.copyright_year_start or site.copyright_end or site.copyright_owner %}
 
                     Copyright
 
+                    <!-- output copyright year if set -->
                     {% if site.copyright_year %}
 
                         {{ site.copyright_year }}
 
                     {% else %}
 
+                        <!-- clear start and end values -->
+                        {% assign copyright_year_start = '' %}
+                        {% assign copyright_year_end = '' %}
+
+                        <!-- assign start value if set -->
                         {% if site.copyright_year_start %}
+                            {% assign copyright_year_start = site.copyright_year_start %}
+                        {% endif%}
 
-                            {{ site.copyright_year_start }}
-                            -
-
-                        {% endif %}
-
+                        <!-- assign end value if set otherwise use current year -->
                         {% if site.copyright_year_end %}
-
-                            {{ site.copyright_year_end }}
-
+                            {% assign copyright_year_end = site.copyright_year_end %}
                         {% else %}
+                            {% assign copyright_year_end = 'now' | date: '%Y' %}
+                        {% endif%}
 
-                            {{ 'now' | date: '%Y' }}
+                        <!-- convert start and end values to a string and strip whitespace -->
+                        {% assign copyright_year_start = '' | append: copyright_year_start | strip %}
+                        {% assign copyright_year_end = '' | append: copyright_year_end | strip %}
 
+                        <!-- only output start year if not equal to end year -->
+                        {% if copyright_year_start != copyright_year_end %}
+                            {{ copyright_year_start }}
+                            -
                         {% endif %}
 
+                        <!-- output end year -->
+                        {{ copyright_year_end }}
 
                     {% endif %}
 
+                    <!-- output copyright owner if set -->
                     {% if site.copyright_owner %}
                         {{ site.copyright_owner }}
                     {% endif %}
 
+                    <!-- output copyright terms if set -->
                     {% if site.copyright_terms %}
                         {{ site.copyright_terms }}
                     {% endif %}
 
                 {% else %}
 
+                    <!-- output site title -->
                     {{ site.title }}
 
                 {% endif %}
