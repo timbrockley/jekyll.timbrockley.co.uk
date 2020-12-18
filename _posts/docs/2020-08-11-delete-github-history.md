@@ -2,13 +2,13 @@
 layout: post
 title: "Delete GitHub History"
 description: "How to clone a GitHub repository and replace all existing commit history with an initial commit."
+author: Tim Brockley
+image: "/assets/images/github_logo_120x120.png"
 draft: false
 permalink: /:path
 categories: cat2
 tags: tag2
 ---
-## Delete GitHub History
-
 ### First Method
 
 Deleting the ".git" folder may cause problems. To delete all existing commits and recreate an initial commit.

@@ -14,7 +14,7 @@
   {% else %}
 
     {% if page.title %}
-      {{ page.title }}
+      {{ page.title | truncate: 28 | remove: '...'}}
     {% endif %}
 
   {% endif %}

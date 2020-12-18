@@ -2,5 +2,92 @@
 layout: default
 ---
 <!-- POST -->
-{{ content }}
+
+<!-- infobar -->
+<div id="infobar">
+  <!-- page title -->
+  <h1>&nbsp;{{ page.title }}</h1>
+  <!-- page title -->
+  <span id="infobar_text">
+
+    <!-- date / time -->
+    {% if page.date %}
+
+      <br>
+      &nbsp;
+      &nbsp;
+      <span style="color:#555">Date:</span>
+      {{ page.date | date: '%d %b %Y'  }}
+
+      {% assign time = page.date | date: '%T' %}
+      {% if time != '00:00:00' %}
+        &nbsp;
+        <span style="color: #555">Time:</span>
+        {{time}}
+      {% endif %}
+      <!-- date / time -->
+
+    {% endif %}
+
+    <!-- author -->
+    {% if page.author %}
+      &nbsp;
+      &nbsp;
+      <span style="color:#555">Author:</span>
+      {{page.author}}
+    {% endif %}
+    <!-- author -->
+
+  </span>
+</div>
+<!-- infobar -->
+
+<!-- content -->
+<div id="content">
+  {{ content }}
+</div>
+<!-- content -->
+
+<!-- infobar -->
+<div id="infobar">
+
+  <span id="infobar_text">
+
+    <!-- page title -->
+    &nbsp;
+    <span style="color:#555">Title:</span>
+    {{ page.title }}</h1>
+    <!-- page title -->
+
+    <!-- date / time -->
+    {% if page.date %}
+
+      &nbsp;
+      &nbsp;
+      <span style="color:#555">Date:</span>
+      {{ page.date | date: '%d %b %Y' }}
+
+      {% assign time = page.date | date: '%T' %}
+      {% if time != '00:00:00' %}
+        &nbsp;
+        <span style="color: #555">Time:</span>
+        {{time}}
+      {% endif %}
+      <!-- date / time -->
+
+    {% endif %}
+
+    <!-- author -->
+    {% if page.author %}
+      &nbsp;
+      &nbsp;
+      <span style="color:#555">Author:</span>
+      {{page.author}}
+    {% endif %}
+    <!-- author -->
+
+  </span>
+</div>
+<!-- infobar -->
+
 <!-- POST -->

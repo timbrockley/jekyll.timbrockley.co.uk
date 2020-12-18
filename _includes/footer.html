@@ -1,22 +1,4 @@
 <!-- FOOTER -->
-<div id="taxonomies">
-
-    Categories:
-    {% assign site_categories = site.categories | sort %}
-    {% for category in site_categories %}
-        &nbsp;
-        <a href="/categories#{{ category | first }}">{{ category | first }}</a>
-    {% endfor %}
-    <br>
-    Tags:
-    {% assign site_tags = site.tags | sort %}
-    {% for tag in site_tags %}
-        &nbsp;
-        <a href="/tags#{{ tag | first }}">{{ tag | first }}</a>
-    {% endfor %}
-    <br>
-
-</div>
 <div id="footer">
 
     <span class="footer_text">
