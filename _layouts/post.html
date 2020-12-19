@@ -11,7 +11,7 @@ layout: default
   <span id="infobar_header_text">
 
     <!-- date / time -->
-    {% if page.date %}
+    {%- if page.date -%}
 
       <br>
       &nbsp;
@@ -19,23 +19,23 @@ layout: default
       <span style="color:#555">Date:</span>
       {{ page.date | date: '%d %b %Y'  }}
 
-      {% assign time = page.date | date: '%T' %}
-      {% if time != '00:00:00' %}
+      {%- assign time = page.date | date: '%T' -%}
+      {%- if time != '00:00:00' -%}
         &nbsp;
         <span style="color: #555">Time:</span>
         {{time}}
-      {% endif %}
+      {%- endif -%}
       <!-- date / time -->
 
-    {% endif %}
+    {%- endif -%}
 
     <!-- author -->
-    {% if page.author %}
+    {%- if page.author -%}
       &nbsp;
       &nbsp;
       <span style="color:#555">Author:</span>
       {{page.author}}
-    {% endif %}
+    {%- endif -%}
     <!-- author -->
 
   </span>
@@ -56,52 +56,52 @@ layout: default
     <!-- page title -->
     &nbsp;
     <span style="color:#555">Title:</span>
-    {{ page.title }}</h1>
+    {{ page.title }}
     <!-- page title -->
 
     <!-- date / time -->
-    {% if page.date %}
+    {%- if page.date -%}
 
       &nbsp;
       &nbsp;
       <span style="color:#555">Date:</span>
       {{ page.date | date: '%d %b %Y' }}
 
-      {% assign time = page.date | date: '%T' %}
-      {% if time != '00:00:00' %}
+      {%- assign time = page.date | date: '%T' -%}
+      {%- if time != '00:00:00' -%}
         &nbsp;
         <span style="color: #555">Time:</span>
         {{time}}
-      {% endif %}
+      {%- endif -%}
       <!-- date / time -->
 
-    {% endif %}
+    {%- endif -%}
 
     <!-- author -->
-    {% if page.author %}
+    {%- if page.author -%}
       &nbsp;
       &nbsp;
       <span style="color:#555">Author:</span>
       {{page.author}}
-    {% endif %}
+    {%- endif -%}
     <!-- author -->
 
     <!-- page categories -->
-    {% if page.categories.size >0 %}
+    {%- if page.categories.size >0 -%}
       &nbsp;
       &nbsp;
       <span style="color:#555">Categories:</span>
       {{page.categories|join: '&nbsp;&nbsp;'}}
-    {% endif %}
+    {%- endif -%}
     <!-- page categories -->
 
     <!-- page tags -->
-    {% if page.tags.size >0 %}
+    {%- if page.tags.size >0 -%}
       &nbsp;
       &nbsp;
       <span style="color:#555">Tags:</span>
       {{page.tags|join: '&nbsp;&nbsp;'}}
-    {% endif %}
+    {%- endif -%}
     <!-- page tags -->
 
   </span>

@@ -8,25 +8,25 @@ title: Categories
   <h2>Posts sorted by Category</h2>
 
   <!-- display posts not in a subfolder -->
-  {% assign site_posts = site.posts | sort: 'title' %}
-  {% for post in site_posts %}
-      {% if post.categories.size == 0  %}
+  {%- assign site_posts = site.posts | sort: 'title' -%}
+  {%- for post in site_posts -%}
+      {%- if post.categories.size == 0  -%}
           <h4><a href="{{ post.url }}">{{post.title}}</a></h4>
-      {% endif %}
-  {% endfor %}
+      {%- endif -%}
+  {%- endfor -%}
   <!-- display posts not in a subfolder -->
 
   <!-- display posts by category -->
-  {% assign site_categories = site.categories | sort %}
-  {% for category in site_categories %}
-    {% capture category_name %}{{ category | first }}{% endcapture %}
+  {%- assign site_categories = site.categories | sort -%}
+  {%- for category in site_categories -%}
+    {%- capture category_name -%}{{ category | first }}{%- endcapture -%}
     <a name="{{ category_name | slugize }}"></a>
     <h3>{{ category_name }}</h3>
-    {% assign posts = site.categories[category_name] | sort: 'title' %}
-    {% for post in posts %}
+    {%- assign posts = site.categories[category_name] | sort: 'title' -%}
+    {%- for post in posts -%}
       <h4><a href="{{ post.url }}">{{post.title}}</a></h4>
-    {% endfor %}
-  {% endfor %}
+    {%- endfor -%}
+  {%- endfor -%}
   <!-- display posts by category -->
 
 </div>

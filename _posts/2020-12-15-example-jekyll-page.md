@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Welcome to Jekyll"
+description: Example page description.
 date:   2020-12-15 16:25:29 +0000
 draft: false
 permalink: /:path

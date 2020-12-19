@@ -1,10 +1,78 @@
 <!-- HEAD -->
 <head>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- initialise title values -->
+  {%- assign title = '' -%}
+  {%- assign page_title = '' | append: page.title | strip -%}
+  {%- assign site_title = '' | append: site.title | strip -%}
+  <!-- initialise title values -->
+
+  <!-- initialise description values -->
+  {%- assign description = '' -%}
+  {%- assign page_description = '' | append: page.description | strip -%}
+  {%- assign site_description = '' | append: site.description | strip -%}
+  <!-- initialise description values -->
+
+  <!-- check if homepage -->
+  {%- if {{page.layout}} == 'home' -%}
+
+    <!-- title tag -->
+    {%- if site_title.size > 0 -%}
+      {%- assign title = '' | append: site_title | strip -%}
+    {%- endif -%}
+    <!-- title tag -->
+
+    <!-- description meta tag -->
+    {%- if site_description.size > 0 -%}
+      {%- assign description = '' | append: site_description | strip -%}
+    {%- endif -%}
+    <!-- description meta tag -->
+
+  {%- else -%}
+
+    <!-- title tag -->
+    {%- if page_title.size > 0 -%}
+      {%- assign title = '' | append: page.title | strip -%}
+      {%- if site_title.size > 0 -%}
+        {%- assign title = title | append: ' | ' -%}
+      {%- endif -%}
+    {%- endif -%}
+    {%- if site_title.size > 0 -%}
+      {%- assign title = title | append: site.title | strip -%}
+    {%- endif -%}
+    <!-- title tag -->
+
+    <!-- description meta tag -->
+    {%- if page_description.size > 0 -%}
+      {%- assign description = '' | append: page_description | strip -%}
+    {%- endif -%}
+    <!-- description meta tag -->
+
+  {%- endif -%}
+  <!-- check if homepage -->
+
+  <!-- title tag -->
+  {%- if title.size > 0 -%}
+    <title>{{title}}</title>
+  {%- endif -%}
+  <!-- title tag -->
+
+  <!-- description meta tag -->
+  {%- if description.size > 0 -%}
+    <meta name="description" content="{{description}}">
+  {%- endif -%}
+  <!-- description meta tag -->
+
+  <meta name="robots" content="noarchive">
+
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="stylesheet" href="/assets/css/style.css">
+
   <script src="/assets/js/navigation.js"></script>
+
 </head>
 <!-- HEAD -->
