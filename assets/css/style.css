@@ -19,7 +19,7 @@ body
     font-family: Helvetica, Arial, sans-serif;
 }
 
-.header_site_title
+#header_site_title
 {
     grid-area: header;
     display: flex;
@@ -30,26 +30,27 @@ body
     background-color: black;
     color: white;
     margin: 0px;
-    padding: 4px;
-    padding-bottom: 8px;
+    padding: 3px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 
-.header_site_title a
+#header_site_title a
 {
     color: white;
     text-decoration: none;
 }
-.header_site_title a:visited
+#header_site_title a:visited
 {
     color: white;
     text-decoration: none;
 }
-.header_site_title a:hover
+#header_site_title a:hover
 {
     color: white;
 }
 
-.header_page_title
+#header_page_title
 {
     grid-area: title;
     background-color: black;
@@ -197,10 +198,10 @@ body
     grid-area: footer;
     background-color: #BBB;
     margin: 0px;
-    padding: 4px;
+    padding: 3px;
 }
 
-.footer_text
+#footerbar
 {
     display: flex;
     justify-content: left;
@@ -208,6 +209,7 @@ body
     align-items: center;
     font-size: 14px;
     font-weight: bold;
+    padding-left: 2px;
 }
 
 a { color: #4963AF; }
