@@ -8,7 +8,7 @@ body
     grid-template-rows: 36px auto 30px;
     grid-template-columns: auto 240px;
     grid-template-areas:
-        "header title"
+        "header header"
         "main sidebar"
         "footer footer";
     display: grid;
@@ -82,17 +82,6 @@ body
 }
 #infobar_header > h1 { display: inline; margin: 0px; padding-top: 0px; }
 #infobar_header_text { font-size: small;}
-
-#infobar_footer
-{
-    background-color: #DDD;
-    color: black;
-    margin: 0px;
-    padding: 4px;
-    padding-left: 0px;
-    text-align: left;
-    font-size: small;
-}
 
 #content
 {
@@ -202,6 +191,18 @@ body
 }
 
 #sidebar a:hover { color: #4963AF; }
+
+
+#infobar_footer
+{
+    background-color: #DDD;
+    color: black;
+    margin: 0px;
+    padding: 4px;
+    padding-left: 0px;
+    text-align: left;
+    font-size: small;
+}
 
 #footer
 {

@@ -5,18 +5,4 @@
       {{ site.title }}
   </a>
 </span>
-
-<span id="header_page_title">
-  {% if page.layout == 'home' %}
-
-    Home
-
-  {% else %}
-
-    {% if page.title %}
-      {{ page.title | truncate: 28 | remove: '...'}}
-    {% endif %}
-
-  {% endif %}
-</span>
 <!-- HEADER -->
