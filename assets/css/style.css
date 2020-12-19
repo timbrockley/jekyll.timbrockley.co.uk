@@ -71,19 +71,28 @@ body
     min-width: 360px;
 }
 
-#infobar
+#infobar_header
 {
     background-color: #DDD;
     color: black;
     margin: 0px;
     padding: 4px;
     padding-left: 2px;
-    text-align: left;
+    padding-bottom: 10px;
 }
+#infobar_header > h1 { display: inline; margin: 0px; padding-top: 0px; }
+#infobar_header_text { font-size: small;}
 
-#infobar > h1 { display: inline; margin: 0px; padding-top: 0px; }
-
-#infobar_text { font-size: small; }
+#infobar_footer
+{
+    background-color: #DDD;
+    color: black;
+    margin: 0px;
+    padding: 4px;
+    padding-left: 0px;
+    text-align: left;
+    font-size: small;
+}
 
 #content
 {
