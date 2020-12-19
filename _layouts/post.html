@@ -86,6 +86,24 @@ layout: default
     {% endif %}
     <!-- author -->
 
+    <!-- page categories -->
+    {% if page.categories.size >0 %}
+      &nbsp;
+      &nbsp;
+      <span style="color:#555">Categories:</span>
+      {{page.categories|join: '&nbsp;&nbsp;'}}
+    {% endif %}
+    <!-- page categories -->
+
+    <!-- page tags -->
+    {% if page.tags.size >0 %}
+      &nbsp;
+      &nbsp;
+      <span style="color:#555">Tags:</span>
+      {{page.tags|join: '&nbsp;&nbsp;'}}
+    {% endif %}
+    <!-- page tags -->
+
   </span>
 </div>
 <!-- infobar -->

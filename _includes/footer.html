@@ -49,7 +49,7 @@
                     {% assign copyright_year_end = '' | append: copyright_year_end | strip %}
 
                     <!-- only output start year if not equal to end year -->
-                    {% if copyright_year_start != copyright_year_end %}
+                    {% if copyright_year_start != '' and copyright_year_start != copyright_year_end %}
                         {{ copyright_year_start }}
                         -
                     {% endif %}

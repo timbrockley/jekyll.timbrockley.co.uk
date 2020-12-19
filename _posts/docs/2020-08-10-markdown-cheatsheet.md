@@ -8,7 +8,7 @@ image: "/assets/images/markdown_logo_200x125.png"
 draft: false
 permalink: /:path
 categories: cat1
-tags: tag1
+tags: [tag1, tag2, test tag]
 ---
 
 ## Headings
