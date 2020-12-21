@@ -12,7 +12,7 @@
         <!-- use copyright value if set -->
         {%- if site.copyright -%}
 
-            {{ site.copyright }}
+            {{site.copyright}}
 
         {%- else -%}
 
@@ -24,7 +24,7 @@
                 <!-- output copyright year if set -->
                 {%- if site.copyright_year -%}
 
-                    {{ site.copyright_year }}
+                    {{site.copyright_year}}
 
                 {%- else -%}
 
@@ -50,29 +50,29 @@
 
                     <!-- only output start year if not equal to end year -->
                     {%- if copyright_year_start != '' and copyright_year_start != copyright_year_end -%}
-                        {{ copyright_year_start }}
+                        {{copyright_year_start}}
                         -
                     {%- endif -%}
 
                     <!-- output end year -->
-                    {{ copyright_year_end }}
+                    {{copyright_year_end}}
 
                 {%- endif -%}
 
                 <!-- output copyright owner if set -->
                 {%- if site.copyright_owner -%}
-                    &nbsp;{{ site.copyright_owner }}
+                    &nbsp;{{site.copyright_owner}}
                 {%- endif -%}
 
                 <!-- output copyright terms if set -->
                 {%- if site.copyright_terms -%}
-                    &nbsp;{{ site.copyright_terms }}
+                    &nbsp;{{site.copyright_terms}}
                 {%- endif -%}
 
             {%- else -%}
 
                 <!-- output site title -->
-                {{ site.title }}
+                {{site.title}}
 
             {%- endif -%}
 

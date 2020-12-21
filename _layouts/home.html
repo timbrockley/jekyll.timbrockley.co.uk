@@ -26,17 +26,17 @@ layout: default
 
       <div id="posts">
         {%- for post in site.posts -%}
-          <div id="post" onclick="goto_url('{{ post.url }}');" >
+          <div id="post" onclick="goto_url('{{post.url}}');" >
             {%- if post.image -%}
               {%- assign image = post.image -%}
             {%- else -%}
               {%- assign image = '/assets/images/jekyll_logo_200_150.png' -%}
             {%- endif -%}
-            <p class="image"><a href="{{ post.url }}"><img src="{{ image }}"></a></p>
-            <p class="title"><a href="{{ post.url }}">{{ post.title | truncate: 30 }}</a></p>
-            <p class="description">{{ post.description }}</p>
-            <p class="date">{{ post.date | date: '%d %b %Y' }}</p>
-            <p class="button"><a href="{{ post.url }}"><button>Read More</button></a></p>
+            <p class="image"><a href="{{post.url}}"><img src="{{image}}"></a></p>
+            <p class="title"><a href="{{post.url}}">{{post.title | truncate: 30}}</a></p>
+            <p class="description">{{post.description}}</p>
+            <p class="date">{{post.date | date: '%d %b %Y'}}</p>
+            <p class="button"><a href="{{post.url}}"><button>Read More</button></a></p>
           </div>
         {%- endfor -%}
       </div>

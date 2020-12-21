@@ -5,7 +5,6 @@ description: "How to clone a GitHub repository and replace all existing commit h
 author: Tim Brockley
 image: "/assets/images/github_logo_120x120.png"
 draft: false
-permalink: /:path
 categories: cat2
 tags: tag2
 ---

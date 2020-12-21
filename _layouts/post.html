@@ -6,7 +6,7 @@ layout: default
 <!-- infobar -->
 <div id="infobar_header">
   <!-- page title -->
-  <h1>&nbsp;{{ page.title }}</h1>
+  <h1>&nbsp;{{page.title}}</h1>
   <!-- page title -->
   <span id="infobar_header_text">
 
@@ -17,7 +17,7 @@ layout: default
       &nbsp;
       &nbsp;
       <span style="color:#555">Date:</span>
-      {{ page.date | date: '%d %b %Y'  }}
+      {{page.date | date: '%d %b %Y'}}
 
       {%- assign time = page.date | date: '%T' -%}
       {%- if time != '00:00:00' -%}
@@ -44,7 +44,7 @@ layout: default
 
 <!-- content -->
 <div id="content">
-  {{ content }}
+  {{content}}
 </div>
 <!-- content -->
 
@@ -56,7 +56,7 @@ layout: default
     <!-- page title -->
     &nbsp;
     <span style="color:#555">Title:</span>
-    {{ page.title }}
+    {{page.title}}
     <!-- page title -->
 
     <!-- date / time -->
@@ -65,7 +65,7 @@ layout: default
       &nbsp;
       &nbsp;
       <span style="color:#555">Date:</span>
-      {{ page.date | date: '%d %b %Y' }}
+      {{page.date | date: '%d %b %Y'}}
 
       {%- assign time = page.date | date: '%T' -%}
       {%- if time != '00:00:00' -%}
