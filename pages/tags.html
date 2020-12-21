@@ -1,0 +1,32 @@
+---
+layout: page
+permalink: /tags
+title: Tags
+---
+<div id="content">
+
+  <h2>Posts sorted by Tag</h2>
+
+  <!-- display posts not in a subfolder -->
+  {%- assign site_posts = site.posts | sort: 'title' -%}
+  {%- for post in site_posts -%}
+      {%- if post.categories.size == 0  -%}
+          <h4><a href="{{ post.url }}">{{post.title}}</a></h4>
+      {%- endif -%}
+  {%- endfor -%}
+  <!-- display posts not in a subfolder -->
+
+  <!-- display posts by tag -->
+  {%- assign site_tags = site.tags | sort -%}
+  {%- for tag in site_tags -%}
+    {%- capture tag_name -%}{{ tag | first }}{%- endcapture -%}
+    <a name="{{ tag_name | slugize }}"></a>
+    <h3>{{ tag_name }}</h3>
+    {%- assign posts = site.tags[tag_name] | sort: 'title' -%}
+    {%- for post in posts -%}
+      <h4><a href="{{ post.url }}">{{post.title}}</a></h4>
+    {%- endfor -%}
+  {%- endfor -%}
+  <!-- display posts by tag -->
+
+</div>

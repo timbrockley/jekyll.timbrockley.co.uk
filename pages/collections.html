@@ -1,0 +1,21 @@
+---
+layout: page
+permalink: /collections
+title: Collections
+---
+<div id="content">
+
+  <h2>Collections</h2>
+
+  {% for collection in site.collections %}
+    {%- if site[collection.label].size > 0 -%}
+      <a name="{{collection.label}}"></a>
+      <h3>{{collection.label}}</h3>
+      {% assign col = site[collection.label] | sort: 'title' %}
+      {% for item in col %}
+        <h4><a href="{{item.url}}">{{item.title}}</a></h4>
+      {% endfor %}
+    {%- endif-%}
+  {% endfor %}
+
+</div>

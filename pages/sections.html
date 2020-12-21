@@ -1,0 +1,53 @@
+---
+layout: page
+permalink: /sections
+title: Sections
+---
+<div id="content">
+
+    <h2>Posts sorted by Section</h2>
+
+    <!-- display posts not in a subfolder -->
+    {%- assign site_posts = site.posts | sort: 'title' -%}
+    {%- for post in site_posts -%}
+        {%- assign path = post.path | replace:'_posts/','' -%}
+        {%- assign path_parts = post.path | split: '/' -%}
+        {%- unless path contains '/' -%}
+            <h4><a href="{{ post.url }}">{{post.title}}</a></h4>
+        {%- endunless -%}
+    {%- endfor -%}
+    <!-- display posts not in a subfolder -->
+
+    <!-- display subfolder names -->
+    {%- assign site_posts = site.posts | sort -%}
+    {%- assign sections='' -%}
+    {%- for post in site_posts -%}
+        {%- assign path = post.path | replace:'_posts/','' -%}
+        {%- assign path_parts = post.path | split: '/' -%}
+        {%- if path contains '/' -%}
+            {%- assign section = path_parts[1] -%}
+            {%- assign sectionX = '¬' | append: section | append:  '¬'  -%}
+            {%- unless sections contains sectionX -%}
+                {%- assign sections=sections | append:  '¬' | append: section | append:  '¬' -%}
+                <h3>{{ section }}</h3>
+
+                <!-- display posts in each subfolder -->
+                {%- assign Xsite_posts = site.posts | sort: 'title' -%}
+                {%- for Xpost in Xsite_posts -%}
+                    {%- assign Xpath = Xpost.path | replace:'_posts/','' -%}
+                    {%- assign Xpath_parts = Xpost.path | split: '/' -%}
+                    {%- if Xpath contains '/' -%}
+                        {%- assign Xsection = Xpath_parts[1] -%}
+                        {%- if Xsection == section -%}
+                            <h4><a href="{{ Xpost.url }}">{{Xpost.title}}</a></h4>
+                        {%- endif -%}
+                    {%- endif -%}
+                {%- endfor -%}
+                <!-- display posts in each subfolder -->
+
+            {%- endunless -%}
+        {%- endif -%}
+    {%- endfor -%}
+    <!-- display subfolder names -->
+
+</div>
