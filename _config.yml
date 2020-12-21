@@ -1,6 +1,7 @@
 title:  Jekyll Site Example
 description: Example site description.
-copyright_owner: Copyright Owner.
+copyright_start_year_end: 2020
+copyright_owner: Tim Brockley.
 copyright_terms: All Rights Reserved.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
