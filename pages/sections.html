@@ -10,7 +10,8 @@ title: Sections
     <!-- display posts not in a subfolder -->
     {%- assign site_posts = site.posts | sort: 'title' -%}
     {%- for post in site_posts -%}
-        {%- assign path = post.path | replace:'_posts/','' -%}
+        {%- assign path = post.path | replace:'_drafts/','' -%}
+        {%- assign path = path | replace:'_posts/','' -%}
         {%- assign path_parts = post.path | split: '/' -%}
         {%- unless path contains '/' -%}
             <h4><a href="{{ post.url }}">{{post.title}}</a></h4>
@@ -22,7 +23,8 @@ title: Sections
     {%- assign site_posts = site.posts | sort -%}
     {%- assign sections='' -%}
     {%- for post in site_posts -%}
-        {%- assign path = post.path | replace:'_posts/','' -%}
+        {%- assign path = post.path | replace:'_drafts/','' -%}
+        {%- assign path = path | replace:'_posts/','' -%}
         {%- assign path_parts = post.path | split: '/' -%}
         {%- if path contains '/' -%}
             {%- assign section = path_parts[1] -%}
