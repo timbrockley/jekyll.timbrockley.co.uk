@@ -229,9 +229,9 @@ a { color: #4963AF; }
 a:visited { color: #4963AF; }
 a:hover { color: blue; }
 
-.borderNone {border:none;color:black;background-color:white;}
-.borderNone table {border:none;color:black;background-color:white;}
-.borderNone tbody {border:none;color:black;background-color:white;}
-.borderNone tr {border:none;color:black;background-color:white;}
-.borderNone th {border:none;color:black;background-color:white;}
-.borderNone td {border:none;color:black;background-color:white;}
+.noborder {border:none;color:black;background-color:white;}
+.noborder table {border:none;color:black;background-color:white;}
+.noborder tbody {border:none;color:black;background-color:white;}
+.noborder tr {border:none;color:black;background-color:white;}
+.noborder th {border:none;color:black;background-color:white;}
+.noborder td {border:none;color:black;background-color:white;}
