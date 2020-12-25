@@ -10,7 +10,7 @@ title: Tags
   <!-- display posts not in a subfolder -->
   {%- assign site_posts = site.posts | sort: 'title' -%}
   {%- for post in site_posts -%}
-      {%- if post.categories.size == 0  -%}
+      {%- if post.tags.size == 0  -%}
           <h4><a href="{{ post.url }}">{{post.title}}</a></h4>
       {%- endif -%}
   {%- endfor -%}
