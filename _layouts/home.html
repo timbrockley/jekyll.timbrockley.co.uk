@@ -24,9 +24,9 @@ layout: default
     <!-- only output if posts exist -->
     {%- if site.posts.size > 0 -%}
 
-      <div id="posts">
+      <div class="posts">
         {%- for post in site.posts -%}
-          <div id="post" onclick="goto_url('{{post.url}}');" >
+          <div class="post" onclick="goto_url('{{post.url}}');" >
             {%- if post.image -%}
               {%- assign image = post.image -%}
             {%- else -%}
